@@ -2,6 +2,11 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'pages/page1.dart';
+import 'pages/page2.dart';
+import 'pages/page3a.dart';
+import 'pages/page3b.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -28,9 +33,14 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       //todo: Implement name routing (initialRoute and getPages parameters)
       // use the name of the page the same as the widget
-      // remove the next line
-      home: Scaffold(body: Center(child: Text('It works!'))), // remove this
-      // remove the last line
+      initialRoute: '/page1',
+      getPages: [
+        GetPage(name: '/page1', page: () => const Page1()),
+        GetPage(name: '/page2', page: () => Page2()),
+        GetPage(name: '/page3a', page: () => Page3A()),
+        GetPage(name: '/page3b', page: () => Page3B()),
+      ],
+      
     );
   }
 }

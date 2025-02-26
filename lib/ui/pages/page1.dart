@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../widgets/responsive_widget.dart';
+
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -50,9 +50,15 @@ class _Page1State extends State<Page1> {
                   ),
                   //todo: call name routing here to page2 sending the name as a parameter
                   ElevatedButton(
-                      onPressed: () => _formKey.currentState!.validate()
-                          ? print('Hello ${_controller.text}!')
-                          : null,
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Get.toNamed(
+                            '/page2',
+                            arguments: _controller.text,
+                          );
+                          print('Hello ${_controller.text}!');
+                        }
+                      },
                       child: const Text('Continue'))
                 ],
               ),

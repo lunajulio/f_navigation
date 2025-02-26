@@ -24,7 +24,10 @@ class Page3B extends StatelessWidget {
               ElevatedButton(
                   //todo: Implement logic for the Top Snackbar to show this text:
                   // This is a snackbar on Top
-                  onPressed: () => null,
+                  onPressed: () {
+                    Get.snackbar('Hi', 'This is a snackbar on Top',
+                        snackPosition: SnackPosition.TOP);
+                  },
                   child: const Text('Show Top Snackbar')),
               const SizedBox(height: 20),
               ElevatedButton(

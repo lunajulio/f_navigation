@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../widgets/responsive_widget.dart';
 
 class Page3A extends StatefulWidget {
-  const Page3A({super.key});
+  Page3A({super.key});
 
   @override
   State<Page3A> createState() => _Page3AState();

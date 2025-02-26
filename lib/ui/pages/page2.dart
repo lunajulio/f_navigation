@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import '../widgets/responsive_widget.dart';
 
 class Page2 extends StatelessWidget {
-  Page2({super.key});
+  Page2({Key? key}) : super(key: key);
   // Obtain the name parameter from the route
-  final String? name = 'some name';
+  final String name = Get.arguments ?? '';
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,9 @@ class Page2 extends StatelessWidget {
           actions: [
             IconButton(
                 //todo: Implement back navigation logic making sure to clean the navigation stack
-                onPressed: () => null,
+                onPressed: () {
+                  Get.toNamed("/page1");
+                },
                 icon: const Icon(Icons.logout))
           ],
         ),
@@ -36,7 +38,9 @@ class Page2 extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     //todo: Implement navigation to page3a sending the name as a parameter
-                    onPressed: () => null,
+                    onPressed: () {
+                      Get.toNamed("/page3a/?name=$name");
+                    },
                     child: const Text(
                       'Option A',
                     ),
